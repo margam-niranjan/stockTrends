@@ -1,15 +1,15 @@
 package com.stocks.corporateActionsResponse;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.stocks.corporateActionsResponse.boardMeeting.BoardData;
-import com.stocks.corporateActionsResponse.boardMeeting.BoardHeader;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BoardMeeting {
     private String msg;
     private String title;
-    private BoardHeader header;
-    private BoardData data;
+    private List<String> header;
+    private List<List<String>> data;
 }
