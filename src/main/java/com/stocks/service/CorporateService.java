@@ -10,6 +10,8 @@ import java.net.http.HttpResponse;
 
 @Service
 public class CorporateService {
+
+    HttpResponse<String> response;
     @Value("${stock.api.key}")
     private String apiKey;
 
@@ -24,7 +26,7 @@ public class CorporateService {
                 .header("x-rapidapi-host", apiHost)
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        response = HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
         return response.body();
     }
 }

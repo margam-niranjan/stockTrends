@@ -1,6 +1,5 @@
 package com.stocks.controller;
 
-import com.stocks.corporateActionsResponse.ApiResponse;
 import com.stocks.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

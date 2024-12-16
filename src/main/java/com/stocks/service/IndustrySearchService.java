@@ -10,21 +10,25 @@ import java.net.http.HttpResponse;
 
 @Service
 public class IndustrySearchService {
+    HttpResponse<String> response;
+
     @Value("${stock.api.key}")
     private String apiKey;
 
     @Value("${stock.api.host}")
     private String apiHost;
 
-    public String fetchIndustryInfo(String stockName) throws Exception{
+
+
+    public String fetchIndustryInfo(String stockName) throws Exception {
 
         HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create("https://"+apiHost+"/industry_search?query="+stockName))
-                .header("x-rapidapi-key",apiKey )
+                .uri(URI.create("https://" + apiHost + "/industry_search?query=" + stockName))
+                .header("x-rapidapi-key", apiKey)
                 .header("x-rapidapi-host", apiHost)
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        response = HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
         return response.body();
 
     }
