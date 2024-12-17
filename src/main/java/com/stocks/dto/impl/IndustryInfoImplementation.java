@@ -1,16 +1,15 @@
 package com.stocks.dto.impl;
 
 import com.stocks.dto.IndustryInfo;
-import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
+import com.stocks.ApiResponse.Industry.IndustryData;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class IndustryInfoImplementation implements IndustryInfo {
@@ -32,12 +31,14 @@ public class IndustryInfoImplementation implements IndustryInfo {
 
     StringBuilder stringBuilder = new StringBuilder(url);
     @Override
-    public List<Map<String, Object>> getIndustries() {
+    public List<IndustryData> getIndustries() {
         HttpEntity<Void> httpEntity = new HttpEntity<>(getHttpHeader());
         String url = stringBuilder.append(industry).toString();
-        ResponseEntity<List> response = restTemplate.exchange(url, HttpMethod.GET,httpEntity, List.class);
+        ResponseEntity<List<IndustryData>> response = restTemplate.exchange(url, HttpMethod.GET,httpEntity, new ParameterizedTypeReference<List<IndustryData>>() {});
         return response.getBody();
     }
+
+
     HttpHeaders getHttpHeader(){
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

@@ -1,5 +1,6 @@
 package com.stocks.controller;
 
+import com.stocks.ApiResponse.Industry.IndustryData;
 import com.stocks.dto.impl.IndustryInfoImplementation;
 import com.stocks.service.IndustrySearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class IndustryInfoController {
     private IndustryInfoImplementation industryInfoImplementation;
 
     @GetMapping("/{industry}")
-    public List<Map<String, Object>> getIndustryInfo(@PathVariable String industry) throws Exception{
+    public List<IndustryData> getIndustryInfo(@PathVariable String industry) throws Exception{
         industryInfoImplementation.setIndustry(industry);
         return industryInfoImplementation.getIndustries();
     }

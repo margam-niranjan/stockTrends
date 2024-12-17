@@ -1,9 +1,9 @@
 package com.stocks.dto;
 
+import com.stocks.ApiResponse.Industry.IndustryData;
+
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 public interface IndustryInfo {
-    List<Map<String, Object>> getIndustries();
+    List<IndustryData> getIndustries();
 }
