@@ -1,35 +1,49 @@
 package com.stocks.service;
 
+import com.stocks.ApiResponse.Industry.IndustryData;
+import com.stocks.dto.IndustryInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import org.springframework.web.client.RestTemplate;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
-public class IndustrySearchService {
-    HttpResponse<String> response;
-
+public class IndustrySearchService implements IndustryInfo {
+    private String industry;
+    public void setIndustry(String industry){
+        this.industry = industry;
+    }
     @Value("${stock.api.key}")
     private String apiKey;
 
     @Value("${stock.api.host}")
     private String apiHost;
 
+    private final String url = "https://"+apiHost+"/industry_search?query=";
 
+    @Autowired
+    private RestTemplate restTemplate;
 
-    public String fetchIndustryInfo(String stockName) throws Exception {
-
-        HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create("https://" + apiHost + "/industry_search?query=" + stockName))
-                .header("x-rapidapi-key", apiKey)
-                .header("x-rapidapi-host", apiHost)
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        response = HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-        return response.body();
-
+    StringBuilder stringBuilder = new StringBuilder(url);
+    @Override
+    public List<IndustryData> getIndustries() {
+        HttpEntity<Void> httpEntity = new HttpEntity<>(getHttpHeader());
+        String url = stringBuilder.append(industry).toString();
+        ResponseEntity<List<IndustryData>> response = restTemplate.exchange(url, HttpMethod.GET,httpEntity, new ParameterizedTypeReference<List<IndustryData>>() {});
+        return response.getBody();
     }
+    HttpHeaders getHttpHeader(){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("x-rapidapi-key", apiKey);
+        headers.set("x-rapidapi-host", apiHost);
+        return headers;
+    }
+
+
 }
