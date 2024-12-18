@@ -2,6 +2,7 @@ package com.stocks.service;
 
 import com.stocks.ApiResponse.Industry.IndustryData;
 import com.stocks.dto.IndustryInfo;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -17,13 +18,14 @@ public class IndustrySearchService implements IndustryInfo {
     public void setIndustry(String industry){
         this.industry = industry;
     }
+
     @Value("${stock.api.key}")
     private String apiKey;
 
     @Value("${stock.api.host}")
     private String apiHost;
 
-    private final String url = "https://"+apiHost+"/industry_search?query=";
+    private final String url = "https://indian-stock-exchange-api2.p.rapidapi.com/industry_search?query=";
 
     @Autowired
     private RestTemplate restTemplate;

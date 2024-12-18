@@ -1,5 +1,4 @@
 package com.stocks.ApiResponse.Industry;
-
 import java.util.Map;
 public class IndustryData {
     private String id;
@@ -12,7 +11,6 @@ public class IndustryData {
     private String bseRic;
     private String nseRic;
     private Map<String, String> activeStockTrends;
-
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
@@ -42,4 +40,5 @@ public class IndustryData {
 
     public Map<String, String> getActiveStockTrends() { return activeStockTrends; }
     public void setActiveStockTrends(Map<String, String> activeStockTrends) { this.activeStockTrends = activeStockTrends; }
+
 }
