@@ -16,6 +16,6 @@ public class CommodityController {
     private CommodityService commodityService;
     @GetMapping("/")
     public List<CommodityData> getCommodity() throws Exception{
-     return commodityService.getCommodity();
+        return commodityService.getCommodity();
     }
 }

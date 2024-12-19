@@ -1,35 +1,104 @@
 package com.stocks.ApiResponse.Commodity;
 
-import java.time.LocalDateTime;
-import java.time.YearMonth;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class CommodityData {
     private String id;
-    private LocalDateTime messageTime;
+    @JsonProperty("messageTime")
+    private String messageTime;
+
     private String product;
-    private LocalDateTime expiry ;
-    private int strike_price;
-    private String option_type;
-    private int  buy_quantity;
-    private float buy_price;
-    private int sell_quantity;
-    private float sell_price;
-    private float last_traded_price;
-    private int last_traded_quantity;
-    private LocalDateTime last_traded_time;
-    private float  average_traded_price;
-    private int total_quantity_traded;
-    private int open_interest;
-    private float open_price;
-    private float high_price;
-    private float low_price;
-    private float close_price;
-    private String total_traded_value;
-    private String price_quotation_unit;
-    private int quotation_lot;
-    private YearMonth product_month;
-    private  int change;
-    private  Long  per_change;
+
+    @JsonProperty("expiry")
+    private String expiry;
+
+    @JsonProperty("strike_price")
+    private int strikePrice;
+
+    @JsonProperty("option_type")
+    private String optionType;
+
+    @JsonProperty("buy_quantity")
+    private int buyQuantity;
+
+    @JsonProperty("buy_price")
+    private float buyPrice;
+
+    @JsonProperty("sell_quantity")
+    private int sellQuantity;
+
+    @JsonProperty("sell_price")
+    private float sellPrice;
+
+    @JsonProperty("last_traded_price")
+    private float lastTradedPrice;
+
+    @JsonProperty("last_traded_quantity")
+    private int lastTradedQuantity;
+
+    @JsonProperty("last_traded_time")
+    private String lastTradedTime;
+
+    @JsonProperty("average_traded_price")
+    private float averageTradedPrice;
+
+    @JsonProperty("total_quantity_traded")
+    private int totalQuantityTraded;
+
+    @JsonProperty("open_interest")
+    private int openInterest;
+
+    @JsonProperty("open_price")
+    private float openPrice;
+
+    @JsonProperty("high_price")
+    private float highPrice;
+
+    @JsonProperty("low_price")
+    private float lowPrice;
+
+    @JsonProperty("close_price")
+    private float closePrice;
+
+    @JsonProperty("total_traded_value")
+    private String totalTradedValue;
+
+    @JsonProperty("price_quotation_unit")
+    private String priceQuotationUnit;
+
+    @JsonProperty("quotation_lot")
+    private int quotationLot;
+
+    @JsonProperty("product_month")
+    private String productMonth;
+
+    private int change;
+
+    @JsonProperty("per_change")
+    private float perChange;
+
+    @JsonProperty("oiResult")
+    private String oiResult;
+
+    public boolean isOiData() {
+        return oiData;
+    }
+
+    public void setOiData(boolean oiData) {
+        this.oiData = oiData;
+    }
+
+    public String getOiResult() {
+        return oiResult;
+    }
+
+    public void setOiResult(String oiResult) {
+        this.oiResult = oiResult;
+    }
+
+    @JsonProperty("oiData")
+    private boolean oiData;
 
     public String getId() {
         return id;
@@ -39,11 +108,11 @@ public class CommodityData {
         this.id = id;
     }
 
-    public LocalDateTime getMessageTime() {
+    public String getMessageTime() {
         return messageTime;
     }
 
-    public void setMessageTime(LocalDateTime messageTime) {
+    public void setMessageTime(String messageTime) {
         this.messageTime = messageTime;
     }
 
@@ -55,172 +124,172 @@ public class CommodityData {
         this.product = product;
     }
 
-    public LocalDateTime getExpiry() {
+    public String getExpiry() {
         return expiry;
     }
 
-    public void setExpiry(LocalDateTime expiry) {
+    public void setExpiry(String expiry) {
         this.expiry = expiry;
     }
 
-    public int getStrike_price() {
-        return strike_price;
+    public int getStrikePrice() {
+        return strikePrice;
     }
 
-    public void setStrike_price(int strike_price) {
-        this.strike_price = strike_price;
+    public void setStrikePrice(int strikePrice) {
+        this.strikePrice = strikePrice;
     }
 
-    public String getOption_type() {
-        return option_type;
+    public String getOptionType() {
+        return optionType;
     }
 
-    public void setOption_type(String option_type) {
-        this.option_type = option_type;
+    public void setOptionType(String optionType) {
+        this.optionType = optionType;
     }
 
-    public int getBuy_quantity() {
-        return buy_quantity;
+    public int getBuyQuantity() {
+        return buyQuantity;
     }
 
-    public void setBuy_quantity(int buy_quantity) {
-        this.buy_quantity = buy_quantity;
+    public void setBuyQuantity(int buyQuantity) {
+        this.buyQuantity = buyQuantity;
     }
 
-    public float getBuy_price() {
-        return buy_price;
+    public float getBuyPrice() {
+        return buyPrice;
     }
 
-    public void setBuy_price(float buy_price) {
-        this.buy_price = buy_price;
+    public void setBuyPrice(float buyPrice) {
+        this.buyPrice = buyPrice;
     }
 
-    public int getSell_quantity() {
-        return sell_quantity;
+    public int getSellQuantity() {
+        return sellQuantity;
     }
 
-    public void setSell_quantity(int sell_quantity) {
-        this.sell_quantity = sell_quantity;
+    public void setSellQuantity(int sellQuantity) {
+        this.sellQuantity = sellQuantity;
     }
 
-    public float getSell_price() {
-        return sell_price;
+    public float getSellPrice() {
+        return sellPrice;
     }
 
-    public void setSell_price(float sell_price) {
-        this.sell_price = sell_price;
+    public void setSellPrice(float sellPrice) {
+        this.sellPrice = sellPrice;
     }
 
-    public float getLast_traded_price() {
-        return last_traded_price;
+    public float getLastTradedPrice() {
+        return lastTradedPrice;
     }
 
-    public void setLast_traded_price(float last_traded_price) {
-        this.last_traded_price = last_traded_price;
+    public void setLastTradedPrice(float lastTradedPrice) {
+        this.lastTradedPrice = lastTradedPrice;
     }
 
-    public int getLast_traded_quantity() {
-        return last_traded_quantity;
+    public int getLastTradedQuantity() {
+        return lastTradedQuantity;
     }
 
-    public void setLast_traded_quantity(int last_traded_quantity) {
-        this.last_traded_quantity = last_traded_quantity;
+    public void setLastTradedQuantity(int lastTradedQuantity) {
+        this.lastTradedQuantity = lastTradedQuantity;
     }
 
-    public LocalDateTime getLast_traded_time() {
-        return last_traded_time;
+    public String getLastTradedTime() {
+        return lastTradedTime;
     }
 
-    public void setLast_traded_time(LocalDateTime last_traded_time) {
-        this.last_traded_time = last_traded_time;
+    public void setLastTradedTime(String lastTradedTime) {
+        this.lastTradedTime = lastTradedTime;
     }
 
-    public float getAverage_traded_price() {
-        return average_traded_price;
+    public float getAverageTradedPrice() {
+        return averageTradedPrice;
     }
 
-    public void setAverage_traded_price(float average_traded_price) {
-        this.average_traded_price = average_traded_price;
+    public void setAverageTradedPrice(float averageTradedPrice) {
+        this.averageTradedPrice = averageTradedPrice;
     }
 
-    public int getTotal_quantity_traded() {
-        return total_quantity_traded;
+    public int getTotalQuantityTraded() {
+        return totalQuantityTraded;
     }
 
-    public void setTotal_quantity_traded(int total_quantity_traded) {
-        this.total_quantity_traded = total_quantity_traded;
+    public void setTotalQuantityTraded(int totalQuantityTraded) {
+        this.totalQuantityTraded = totalQuantityTraded;
     }
 
-    public int getOpen_interest() {
-        return open_interest;
+    public int getOpenInterest() {
+        return openInterest;
     }
 
-    public void setOpen_interest(int open_interest) {
-        this.open_interest = open_interest;
+    public void setOpenInterest(int openInterest) {
+        this.openInterest = openInterest;
     }
 
-    public float getOpen_price() {
-        return open_price;
+    public float getOpenPrice() {
+        return openPrice;
     }
 
-    public void setOpen_price(float open_price) {
-        this.open_price = open_price;
+    public void setOpenPrice(float openPrice) {
+        this.openPrice = openPrice;
     }
 
-    public float getHigh_price() {
-        return high_price;
+    public float getHighPrice() {
+        return highPrice;
     }
 
-    public void setHigh_price(float high_price) {
-        this.high_price = high_price;
+    public void setHighPrice(float highPrice) {
+        this.highPrice = highPrice;
     }
 
-    public float getLow_price() {
-        return low_price;
+    public float getLowPrice() {
+        return lowPrice;
     }
 
-    public void setLow_price(float low_price) {
-        this.low_price = low_price;
+    public void setLowPrice(float lowPrice) {
+        this.lowPrice = lowPrice;
     }
 
-    public float getClose_price() {
-        return close_price;
+    public float getClosePrice() {
+        return closePrice;
     }
 
-    public void setClose_price(float close_price) {
-        this.close_price = close_price;
+    public void setClosePrice(float closePrice) {
+        this.closePrice = closePrice;
     }
 
-    public String getTotal_traded_value() {
-        return total_traded_value;
+    public String getTotalTradedValue() {
+        return totalTradedValue;
     }
 
-    public void setTotal_traded_value(String total_traded_value) {
-        this.total_traded_value = total_traded_value;
+    public void setTotalTradedValue(String totalTradedValue) {
+        this.totalTradedValue = totalTradedValue;
     }
 
-    public String getPrice_quotation_unit() {
-        return price_quotation_unit;
+    public String getPriceQuotationUnit() {
+        return priceQuotationUnit;
     }
 
-    public void setPrice_quotation_unit(String price_quotation_unit) {
-        this.price_quotation_unit = price_quotation_unit;
+    public void setPriceQuotationUnit(String priceQuotationUnit) {
+        this.priceQuotationUnit = priceQuotationUnit;
     }
 
-    public int getQuotation_lot() {
-        return quotation_lot;
+    public int getQuotationLot() {
+        return quotationLot;
     }
 
-    public void setQuotation_lot(int quotation_lot) {
-        this.quotation_lot = quotation_lot;
+    public void setQuotationLot(int quotationLot) {
+        this.quotationLot = quotationLot;
     }
 
-    public YearMonth getProduct_month() {
-        return product_month;
+    public String getProductMonth() {
+        return productMonth;
     }
 
-    public void setProduct_month(YearMonth product_month) {
-        this.product_month = product_month;
+    public void setProductMonth(String productMonth) {
+        this.productMonth = productMonth;
     }
 
     public int getChange() {
@@ -231,11 +300,11 @@ public class CommodityData {
         this.change = change;
     }
 
-    public Long getPer_change() {
-        return per_change;
+    public float getPerChange() {
+        return perChange;
     }
 
-    public void setPer_change(Long per_change) {
-        this.per_change = per_change;
+    public void setPerChange(float perChange) {
+        this.perChange = perChange;
     }
 }
