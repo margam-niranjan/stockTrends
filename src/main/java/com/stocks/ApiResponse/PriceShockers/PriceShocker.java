@@ -1,4 +1,4 @@
 package com.stocks.ApiResponse.PriceShockers;
 
-public class NsePriceShockers {
+public class PriceShocker {
 }
