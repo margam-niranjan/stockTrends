@@ -1,5 +1,6 @@
 package com.stocks.stockTrends;
 
+import com.stocks.ApiResponse.HeaderHttp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,10 @@ public class StockTrendsApplication {
 	@Bean
 	public RestTemplate restTemplate(){
 		return new RestTemplate();
+	}
+	@Bean
+	public HeaderHttp headerHttp() {
+		return new HeaderHttp();
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(StockTrendsApplication.class, args);

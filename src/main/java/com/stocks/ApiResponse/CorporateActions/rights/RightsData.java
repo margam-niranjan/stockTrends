@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.CorporateActions.rights;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RightData {
+public class RightsData {
     @JsonProperty("title")
     private String title;
     @JsonProperty("msg")
