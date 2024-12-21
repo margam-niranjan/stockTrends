@@ -14,6 +14,6 @@ public class StockController {
 
     @GetMapping("/{stock}")
     public String getStockData(@PathVariable String stock) throws Exception {
-        return stockService.fetchStockData(stock);
+
     }
 }
