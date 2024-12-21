@@ -1,36 +1,50 @@
 package com.stocks.ApiResponse.IPO.activeIpo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.LocalDate;
 
 public class ActiveIpoData {
     private String symbol;
     private String name;
     private String status;
+
     @JsonProperty("is_sme")
-    private boolean isSme;
+    private Boolean isSme;  // Use Boolean to allow null
+
     @JsonProperty("additional_text")
     private String additionalText;
+
     @JsonProperty("min_price")
-    private int minPrice;
+    private Integer minPrice;  // Use Integer to allow null
+
     @JsonProperty("max_price")
-    private int maxPrice;
+    private Integer maxPrice;  // Use Integer to allow null
+
     @JsonProperty("issue_price")
-    private int issuePrice;
+    private Integer issuePrice;  // Use Integer to allow null
+
     @JsonProperty("listing_gains")
-    private int listingGains;
+    private Integer listingGains;  // Use Integer to allow null
+
     @JsonProperty("listing_price")
-    private int listingPrice;
+    private Integer listingPrice;  // Use Integer to allow null
+
     @JsonProperty("bidding_start_date")
-    private String biddingStartDate;
+    private LocalDate biddingStartDate;
+
     @JsonProperty("bidding_end_date")
-    private String biddingEndDate;
+    private LocalDate biddingEndDate;
+
     @JsonProperty("listing_date")
-    private String listingDate;
+    private LocalDate listingDate;
+
     @JsonProperty("lot_size")
-    private int lotSize;
+    private Integer lotSize;  // Use Integer to allow null
+
     @JsonProperty("document_url")
     private String documentUrl;
 
+    // Getters and Setters
     public String getSymbol() {
         return symbol;
     }
@@ -55,12 +69,12 @@ public class ActiveIpoData {
         this.status = status;
     }
 
-    public boolean isSme() {
+    public Boolean getIsSme() {
         return isSme;
     }
 
-    public void setSme(boolean sme) {
-        isSme = sme;
+    public void setIsSme(Boolean isSme) {
+        this.isSme = isSme;
     }
 
     public String getAdditionalText() {
@@ -71,75 +85,75 @@ public class ActiveIpoData {
         this.additionalText = additionalText;
     }
 
-    public int getMinPrice() {
+    public Integer getMinPrice() {
         return minPrice;
     }
 
-    public void setMinPrice(int minPrice) {
+    public void setMinPrice(Integer minPrice) {
         this.minPrice = minPrice;
     }
 
-    public int getMaxPrice() {
+    public Integer getMaxPrice() {
         return maxPrice;
     }
 
-    public void setMaxPrice(int maxPrice) {
+    public void setMaxPrice(Integer maxPrice) {
         this.maxPrice = maxPrice;
     }
 
-    public int getIssuePrice() {
+    public Integer getIssuePrice() {
         return issuePrice;
     }
 
-    public void setIssuePrice(int issuePrice) {
+    public void setIssuePrice(Integer issuePrice) {
         this.issuePrice = issuePrice;
     }
 
-    public int getListingGains() {
+    public Integer getListingGains() {
         return listingGains;
     }
 
-    public void setListingGains(int listingGains) {
+    public void setListingGains(Integer listingGains) {
         this.listingGains = listingGains;
     }
 
-    public int getListingPrice() {
+    public Integer getListingPrice() {
         return listingPrice;
     }
 
-    public void setListingPrice(int listingPrice) {
+    public void setListingPrice(Integer listingPrice) {
         this.listingPrice = listingPrice;
     }
 
-    public String getBiddingStartDate() {
+    public LocalDate getBiddingStartDate() {
         return biddingStartDate;
     }
 
-    public void setBiddingStartDate(String biddingStartDate) {
+    public void setBiddingStartDate(LocalDate biddingStartDate) {
         this.biddingStartDate = biddingStartDate;
     }
 
-    public String getBiddingEndDate() {
+    public LocalDate getBiddingEndDate() {
         return biddingEndDate;
     }
 
-    public void setBiddingEndDate(String biddingEndDate) {
+    public void setBiddingEndDate(LocalDate biddingEndDate) {
         this.biddingEndDate = biddingEndDate;
     }
 
-    public String getListingDate() {
+    public LocalDate getListingDate() {
         return listingDate;
     }
 
-    public void setListingDate(String listingDate) {
+    public void setListingDate(LocalDate listingDate) {
         this.listingDate = listingDate;
     }
 
-    public int getLotSize() {
+    public Integer getLotSize() {
         return lotSize;
     }
 
-    public void setLotSize(int lotSize) {
+    public void setLotSize(Integer lotSize) {
         this.lotSize = lotSize;
     }
 

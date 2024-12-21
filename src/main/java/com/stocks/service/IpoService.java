@@ -2,7 +2,7 @@ package com.stocks.service;
 
 import com.stocks.ApiResponse.Commodity.CommodityData;
 import com.stocks.ApiResponse.HeaderHttp;
-import com.stocks.ApiResponse.IPO.Ipodata;
+import com.stocks.ApiResponse.IPO.IpoData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -25,9 +25,9 @@ public class IpoService {
     @Autowired
     RestTemplate restTemplate;
     HeaderHttp header = new HeaderHttp();
-    public List<Ipodata> getIpo() {
+    public List<IpoData> getIpo() {
         HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey, apiHost));
-        ResponseEntity<List<Ipodata>> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<Ipodata>>() {
+        ResponseEntity<List<IpoData>> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<IpoData>>() {
         });
         return response.getBody();
     }

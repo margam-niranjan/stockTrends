@@ -1,6 +1,6 @@
 package com.stocks.controller;
 
-import com.stocks.ApiResponse.IPO.Ipodata;
+import com.stocks.ApiResponse.IPO.IpoData;
 import com.stocks.service.IpoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ public class IpoController {
     @Autowired
     private IpoService ipoService;
     @GetMapping("/")
-    public List<Ipodata> getIpo()throws Exception{
+    public List<IpoData> getIpo()throws Exception{
         return ipoService.getIpo();
     }
 }
