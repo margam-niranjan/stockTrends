@@ -15,7 +15,7 @@ public class IpoController {
     @Autowired
     private IpoService ipoService;
     @GetMapping("/")
-    public List<IpoData> getIpo()throws Exception{
+    public IpoData getIpo()throws Exception{
         return ipoService.getIpo();
     }
 }

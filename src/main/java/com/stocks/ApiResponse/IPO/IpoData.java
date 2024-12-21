@@ -11,16 +11,16 @@ import java.util.List;
 public class IpoData {
 
   @JsonProperty("upcoming")
-  UpcomingIpoData upcoming;
+  private List<UpcomingIpoData> upcoming;
 
   @JsonProperty("listed")
-  ListedIpoData listed;
+  private List<ListedIpoData> listed;
 
   @JsonProperty("active")
-  ActiveIpoData active;
+   private List<ActiveIpoData> active;
 
   @JsonProperty("closed")
-  ClosedIpoData closed;
+   private List<ClosedIpoData> closed;
 
-  
+
 }

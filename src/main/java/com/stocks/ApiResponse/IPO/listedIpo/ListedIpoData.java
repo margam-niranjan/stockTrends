@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDate;
 
 public class ListedIpoData {
+    @JsonProperty("symbol")
     private String symbol;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("status")
     private String status;
 
     @JsonProperty("is_sme")
@@ -30,10 +33,10 @@ public class ListedIpoData {
     private Integer listingPrice;  // Use Integer to allow null
 
     @JsonProperty("bidding_start_date")
-    private LocalDate biddingStartDate;
+    private String biddingStartDate;
 
     @JsonProperty("bidding_end_date")
-    private LocalDate biddingEndDate;
+    private String biddingEndDate;
 
     @JsonProperty("listing_date")
     private LocalDate listingDate;
@@ -44,7 +47,14 @@ public class ListedIpoData {
     @JsonProperty("document_url")
     private String documentUrl;
 
-    // Getters and Setters
+    public String getAdditionalText() {
+        return additionalText;
+    }
+
+    public void setAdditionalText(String additionalText) {
+        this.additionalText = additionalText;
+    }
+
     public String getSymbol() {
         return symbol;
     }
@@ -69,20 +79,12 @@ public class ListedIpoData {
         this.status = status;
     }
 
-    public Boolean getIsSme() {
+    public Boolean getSme() {
         return isSme;
     }
 
-    public void setIsSme(Boolean isSme) {
-        this.isSme = isSme;
-    }
-
-    public String getAdditionalText() {
-        return additionalText;
-    }
-
-    public void setAdditionalText(String additionalText) {
-        this.additionalText = additionalText;
+    public void setSme(Boolean sme) {
+        isSme = sme;
     }
 
     public Integer getMinPrice() {
@@ -125,19 +127,19 @@ public class ListedIpoData {
         this.listingPrice = listingPrice;
     }
 
-    public LocalDate getBiddingStartDate() {
+    public String getBiddingStartDate() {
         return biddingStartDate;
     }
 
-    public void setBiddingStartDate(LocalDate biddingStartDate) {
+    public void setBiddingStartDate(String biddingStartDate) {
         this.biddingStartDate = biddingStartDate;
     }
 
-    public LocalDate getBiddingEndDate() {
+    public String getBiddingEndDate() {
         return biddingEndDate;
     }
 
-    public void setBiddingEndDate(LocalDate biddingEndDate) {
+    public void setBiddingEndDate(String biddingEndDate) {
         this.biddingEndDate = biddingEndDate;
     }
 

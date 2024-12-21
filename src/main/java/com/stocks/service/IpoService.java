@@ -25,10 +25,9 @@ public class IpoService {
     @Autowired
     RestTemplate restTemplate;
     HeaderHttp header = new HeaderHttp();
-    public List<IpoData> getIpo() {
+    public IpoData getIpo() {
         HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey, apiHost));
-        ResponseEntity<List<IpoData>> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<IpoData>>() {
-        });
+        ResponseEntity<IpoData> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, IpoData.class);
         return response.getBody();
     }
 }
