@@ -1,24 +1,30 @@
 package com.stocks.ApiResponse.PriceShockers;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class PriceShockersData {
-    List<BsePriceShockers> bsePriceShockers;
-    List<NsePriceShockers> nsePriceShockers;
+    @JsonProperty("BSE_PriceShocker")
+    private List<PriceShocker> bsePriceShocker;
 
-    public List<BsePriceShockers> getBsePriceShockers() {
-        return bsePriceShockers;
+    @JsonProperty("NSE_PriceShocker")
+    private List<PriceShocker> nsePriceShocker;
+
+    // Getters and Setters
+    public List<PriceShocker> getBsePriceShocker() {
+        return bsePriceShocker;
     }
 
-    public void setBsePriceShockers(List<BsePriceShockers> bsePriceShockers) {
-        this.bsePriceShockers = bsePriceShockers;
+    public void setBsePriceShocker(List<PriceShocker> bsePriceShocker) {
+        this.bsePriceShocker = bsePriceShocker;
     }
 
-    public List<NsePriceShockers> getNsePriceShockers() {
-        return nsePriceShockers;
+    public List<PriceShocker> getNsePriceShocker() {
+        return nsePriceShocker;
     }
 
-    public void setNsePriceShockers(List<NsePriceShockers> nsePriceShockers) {
-        this.nsePriceShockers = nsePriceShockers;
+    public void setNsePriceShocker(List<PriceShocker> nsePriceShocker) {
+        this.nsePriceShocker = nsePriceShocker;
     }
 }

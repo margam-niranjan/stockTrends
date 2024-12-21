@@ -31,6 +31,4 @@ public class CommodityService {
         ResponseEntity<List<CommodityData>> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<CommodityData>>() {});
         return response.getBody();
     }
-
-
 }
