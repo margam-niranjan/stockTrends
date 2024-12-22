@@ -1,7 +1,7 @@
 package com.stocks.service;
 
-import com.stocks.ApiResponse.CorporateActions.CorporateActionsData;
 import com.stocks.ApiResponse.HeaderHttp;
+import com.stocks.ApiResponse.stockInfoByName.StockInfoByName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -10,16 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-
 @Service
 public class StockService {
-    private String industry;
-    public void setIndustry(String industry){
-        this.industry = industry;
+    private String stock;
+    public void setStock(String industry){
+        this.stock = stock;
     }
     @Value("${stock.api.key}")
     private String apiKey;
@@ -31,10 +26,10 @@ public class StockService {
     private RestTemplate restTemplate;
     StringBuilder stringBuilder = new StringBuilder(url);
     HeaderHttp header = new HeaderHttp();
-    public CorporateActionsData getCorporateActions(){
-        HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey,apiHost));
-        String url = stringBuilder.append(industry).toString();
-        ResponseEntity<CorporateActionsData> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, CorporateActionsData.class);
+    public StockInfoByName getStockInfo(){
+        HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey, apiHost));
+        String url = stringBuilder.append(stock).toString();
+        ResponseEntity<StockInfoByName> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, StockInfoByName.class);
         return response.getBody();
     }
 

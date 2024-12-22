@@ -1,5 +1,6 @@
 package com.stocks.controller;
 
+import com.stocks.ApiResponse.stockInfoByName.StockInfoByName;
 import com.stocks.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,8 @@ public class StockController {
     private StockService stockService;
 
     @GetMapping("/{stock}")
-    public String getStockData(@PathVariable String stock) throws Exception {
-
+    public StockInfoByName getStockData(@PathVariable String stock) throws Exception {
+        stockService.setStock(stock);
+        return stockService.getStockInfo();
     }
 }

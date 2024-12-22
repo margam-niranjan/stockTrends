@@ -1,26 +1,51 @@
 package com.stocks.ApiResponse.IPO;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.stocks.ApiResponse.IPO.activeIpo.ActiveIpoData;
-import com.stocks.ApiResponse.IPO.closedIpo.ClosedIpoData;
-import com.stocks.ApiResponse.IPO.listedIpo.ListedIpoData;
-import com.stocks.ApiResponse.IPO.upcomingIpo.UpcomingIpoData;
-
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class IpoData {
+public class IpoData{
 
-  @JsonProperty("upcoming")
-  private List<UpcomingIpoData> upcoming;
+	@JsonProperty("listed")
+	private List<ListedItem> listed;
 
-  @JsonProperty("listed")
-  private List<ListedIpoData> listed;
+	@JsonProperty("active")
+	private List<ActiveItem> active;
 
-  @JsonProperty("active")
-   private List<ActiveIpoData> active;
+	@JsonProperty("closed")
+	private List<ClosedItem> closed;
 
-  @JsonProperty("closed")
-   private List<ClosedIpoData> closed;
+	@JsonProperty("upcoming")
+	private List<UpcomingItem> upcoming;
 
+	public void setListed(List<ListedItem> listed){
+		this.listed = listed;
+	}
 
+	public List<ListedItem> getListed(){
+		return listed;
+	}
+
+	public void setActive(List<ActiveItem> active){
+		this.active = active;
+	}
+
+	public List<ActiveItem> getActive(){
+		return active;
+	}
+
+	public void setClosed(List<ClosedItem> closed){
+		this.closed = closed;
+	}
+
+	public List<ClosedItem> getClosed(){
+		return closed;
+	}
+
+	public void setUpcoming(List<UpcomingItem> upcoming){
+		this.upcoming = upcoming;
+	}
+
+	public List<UpcomingItem> getUpcoming(){
+		return upcoming;
+	}
 }
