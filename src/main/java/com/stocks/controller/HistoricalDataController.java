@@ -12,13 +12,19 @@ public class HistoricalDataController {
     @Autowired
     HistoricalDataService historicalDataService;
     @GetMapping("/{stock}")
-    public ResponseEntity<GenericApiResponse<Object>> getHistoricData(@PathVariable String stock,@RequestParam String period,@RequestParam String filter) throws Exception{
-        historicalDataService.setPeriod(period);
-        historicalDataService.setFilter(filter);
-        historicalDataService.setStockname(stock);
-        Object response  = historicalDataService.processData();
-        return ResponseEntity.ok(GenericApiResponse.success(response));
+    public ResponseEntity<GenericApiResponse<Object>> getHistoricData(@PathVariable String stock,@RequestParam String period,@RequestParam String filter) {
+        try{
+            historicalDataService.setPeriod(period);
+            historicalDataService.setFilter(filter);
+            historicalDataService.setStockname(stock);
+            Object response = historicalDataService.processData();
+            return ResponseEntity.ok(GenericApiResponse.success(response));
+        }catch (IllegalArgumentException ex) {
+            return ResponseEntity.badRequest().body(GenericApiResponse.error("Invalid stats type: " + ex.getMessage()));
 
+        } catch (Exception ex) {
+            return ResponseEntity.status(500).body(GenericApiResponse.error("An error occurred: " + ex.getMessage()));
+        }
 
 
     }

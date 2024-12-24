@@ -1,4 +1,4 @@
-package com.stocks.ApiResponse.historicalData.clientRequestFailed;
+package com.stocks.ApiResponse.historicalData.clientFailureData;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;

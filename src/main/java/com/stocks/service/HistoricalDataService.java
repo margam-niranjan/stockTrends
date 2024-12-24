@@ -1,17 +1,18 @@
 package com.stocks.service;
 
-import com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer;
 import com.stocks.ApiResponse.HeaderHttp;
-import com.stocks.ApiResponse.HistoricalStats.quaterResults.QuaterResultsHistoricalStatsData;
-import com.stocks.ApiResponse.historicalData.clientRequestFailed.HistoricalFailureData;
+import com.stocks.ApiResponse.historicalData.clientFailureData.HistoricalFailureData;
 import com.stocks.ApiResponse.historicalData.clientRequestSucess.HistoricalSuccessData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Service
 public class HistoricalDataService {
@@ -51,7 +52,7 @@ public class HistoricalDataService {
     @Autowired
     RestTemplate restTemplate;
 
-    private String baseUrl ="ttps://indian-stock-exchange-api2.p.rapidapi.com/historical_data?stock_name=";
+    private String baseUrl ="https://indian-stock-exchange-api2.p.rapidapi.com/historical_data?stock_name=";
     HeaderHttp header = new HeaderHttp();
     String url = new String();
     boolean containsUrl=false;
@@ -63,10 +64,11 @@ public class HistoricalDataService {
             return getSuccessData();
         }
     }
-//    period=3yr&filter=evebitda
     public HistoricalSuccessData getSuccessData() {
         url = baseUrl + stockname +"&period="+period+"&filter="+filter;
         HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey, apiHost));
+        ResponseEntity<String> rawResponse = restTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class);
+        System.out.println("Raw Response: " + rawResponse.getBody());
         ResponseEntity<HistoricalSuccessData> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, HistoricalSuccessData.class);
         return response.getBody();
 
