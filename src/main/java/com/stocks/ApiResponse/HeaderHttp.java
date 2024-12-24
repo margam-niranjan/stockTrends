@@ -13,6 +13,7 @@ public class HeaderHttp {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("x-rapidapi-key", apiKey);
+        headers.set("Content-Type", "application/json");
         headers.set("x-rapidapi-host", apiHost);
         return headers;
     }

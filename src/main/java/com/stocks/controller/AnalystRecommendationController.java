@@ -1,9 +1,7 @@
 package com.stocks.controller;
 
 import com.stocks.ApiResponse.analystRecommendation.AnalystRecommendationData;
-import com.stocks.ApiResponse.stockInfoByName.StockInfoByName;
 import com.stocks.service.AnalystRecommendationService;
-import com.stocks.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/analyst-recommendations")
 public class AnalystRecommendationController {
     @Autowired
-    private AnalystRecommendationService analystRecommendationService;
+    AnalystRecommendationService analystRecommendationService;
 
     @GetMapping("/{stock}")
     public AnalystRecommendationData getStockData(@PathVariable String stock) throws Exception {

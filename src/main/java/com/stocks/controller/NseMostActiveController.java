@@ -14,7 +14,7 @@ import java.util.List;
 public class NseMostActiveController {
     @Autowired
     NseMostActiveService nseMostActiveService;
-    @GetMapping("/")
+    @GetMapping
     public List<NseMostActiveData> getNseActive()throws Exception{
    return nseMostActiveService.getNseActive();
     }
