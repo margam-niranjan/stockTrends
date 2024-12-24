@@ -1,9 +1,10 @@
 package com.stocks.ApiResponse.historicalData.clientRequestSucess;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
+import java.util.Map;
 
-public class DatasetsItem{
+public class DatasetsItem {
 
 	@JsonProperty("metric")
 	private String metric;
@@ -12,40 +13,40 @@ public class DatasetsItem{
 	private Meta meta;
 
 	@JsonProperty("values")
-	private List<List<String>> values;
+	private List<List<Object>> values; 
 
 	@JsonProperty("label")
 	private String label;
 
-	public void setMetric(String metric){
-		this.metric = metric;
-	}
-
-	public String getMetric(){
+	public String getMetric() {
 		return metric;
 	}
 
-	public void setMeta(Meta meta){
-		this.meta = meta;
+	public void setMetric(String metric) {
+		this.metric = metric;
 	}
 
-	public Meta getMeta(){
+	public Meta getMeta() {
 		return meta;
 	}
 
-	public void setValues(List<List<String>> values){
-		this.values = values;
+	public void setMeta(Meta meta) {
+		this.meta = meta;
 	}
 
-	public List<List<String>> getValues(){
+	public List<List<Object>> getValues() {
 		return values;
 	}
 
-	public void setLabel(String label){
-		this.label = label;
+	public void setValues(List<List<Object>> values) {
+		this.values = values;
 	}
 
-	public String getLabel(){
+	public String getLabel() {
 		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
 	}
 }
