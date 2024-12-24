@@ -3,7 +3,7 @@ package com.stocks.ApiResponse.stockInfoByName;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class StockInfoByName {
+public class StockInfoByName{
 
 	@JsonProperty("yearLow")
 	private String yearLow;

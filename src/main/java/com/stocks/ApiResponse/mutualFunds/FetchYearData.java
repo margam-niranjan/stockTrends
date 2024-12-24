@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.mutualFunds;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MutualFundsData{
+public class FetchYearData{
 
 	@JsonProperty("Debt")
 	private Debt debt;
