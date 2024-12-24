@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.ratios;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class RatiosHistoricalStatsData {
 
 	@JsonProperty("Debtor Days")
 	private DebtorDays debtorDays;

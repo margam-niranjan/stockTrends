@@ -1,9 +1,9 @@
-package com.stocks.ApiResponse.HistoricalStats.null;
+package com.stocks.ApiResponse.HistoricalStats.nullData;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class NullHistoricalStatsData {
 
 	@JsonProperty("detail")
 	private List<DetailItem> detail;

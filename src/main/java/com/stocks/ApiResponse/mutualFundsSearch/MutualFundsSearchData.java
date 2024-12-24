@@ -1,8 +1,8 @@
-package com.stocks.ApiResponse.mutualFunds;
+package com.stocks.ApiResponse.mutualFundsSearch;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MutualFundsData {
+public class MutualFundsSearchData {
     @JsonProperty("id")
     private String id;
 

@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.shareHoldingPatternyearly;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class ShareHoldingPatternYearlyHistoricalStatsData {
 
 	@JsonProperty("Government")
 	private Government government;
@@ -11,7 +11,7 @@ public class HistoricalStatsData{
 	private NoOfShareholders noOfShareholders;
 
 	@JsonProperty("Public")
-	private Public public;
+	private PublicData publicData;
 
 	@JsonProperty("FIIs")
 	private FIIs fIIs;
@@ -38,12 +38,12 @@ public class HistoricalStatsData{
 		return noOfShareholders;
 	}
 
-	public void setPublic(Public public){
-		this.public = public;
+	public void setPublic(PublicData publicData){
+		this.publicData = publicData;
 	}
 
-	public Public getPublic(){
-		return public;
+	public PublicData getPublic(){
+		return publicData;
 	}
 
 	public void setFIIs(FIIs fIIs){

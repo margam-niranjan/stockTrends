@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.shareHoldingPatternQuaterly;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class ShareHoldingHistoricalStatsData {
 
 	@JsonProperty("Debtor Days")
 	private DebtorDays debtorDays;

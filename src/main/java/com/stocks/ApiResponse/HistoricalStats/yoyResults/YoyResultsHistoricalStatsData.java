@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.yoyResults;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class YoyResultsHistoricalStatsData {
 
 	@JsonProperty("Interest")
 	private Interest interest;

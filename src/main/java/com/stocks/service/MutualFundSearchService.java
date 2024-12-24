@@ -1,8 +1,7 @@
 package com.stocks.service;
 
 import com.stocks.ApiResponse.HeaderHttp;
-import com.stocks.ApiResponse.Industry.IndustryData;
-import com.stocks.ApiResponse.mutualFunds.MutualFundsData;
+import com.stocks.ApiResponse.mutualFundsSearch.MutualFundsSearchData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -15,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Service
-public class MutualFundService {
+public class MutualFundSearchService {
     private String fund;
     public void setFund(String fund){
         this.fund = fund;
@@ -30,10 +29,10 @@ public class MutualFundService {
     private final String url = "https://indian-stock-exchange-api2.p.rapidapi.com/mutual_fund_search?query=";
     StringBuilder stringBuilder = new StringBuilder(url);
     HeaderHttp header = new HeaderHttp();
-    public List<MutualFundsData> getMutualFund(){
+    public List<MutualFundsSearchData> getMutualFund(){
         String url = stringBuilder.append(fund).toString();
         HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey,apiHost));
-        ResponseEntity<List<MutualFundsData>> response = restTemplate.exchange(url, HttpMethod.GET,httpEntity,new ParameterizedTypeReference<List<MutualFundsData>>() {});
+        ResponseEntity<List<MutualFundsSearchData>> response = restTemplate.exchange(url, HttpMethod.GET,httpEntity,new ParameterizedTypeReference<List<MutualFundsSearchData>>() {});
         return response.getBody();
     }
 

@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.cashFlow;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class CashHistoricalStatsData {
 
 	@JsonProperty("Cash from Operating Activity")
 	private CashFromOperatingActivity cashFromOperatingActivity;

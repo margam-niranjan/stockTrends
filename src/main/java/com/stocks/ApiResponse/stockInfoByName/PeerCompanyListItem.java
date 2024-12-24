@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class PeerCompanyListItem{
 
 	@JsonProperty("netChange")
-	private int netChange;
+	private Object netChange;
 
 	@JsonProperty("marketCap")
 	private Object marketCap;
@@ -64,11 +64,11 @@ public class PeerCompanyListItem{
 	@JsonProperty("priceToEarningsValueRatio")
 	private Object priceToEarningsValueRatio;
 
-	public void setNetChange(int netChange){
+	public void setNetChange(Object netChange){
 		this.netChange = netChange;
 	}
 
-	public int getNetChange(){
+	public Object getNetChange(){
 		return netChange;
 	}
 

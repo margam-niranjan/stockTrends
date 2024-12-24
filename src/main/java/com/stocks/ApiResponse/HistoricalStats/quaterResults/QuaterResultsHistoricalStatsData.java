@@ -3,7 +3,7 @@ package com.stocks.ApiResponse.HistoricalStats.quaterResults;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class QuaterResultsHistoricalStatsData {
 
 	@JsonProperty("datasets")
 	private List<DatasetsItem> datasets;

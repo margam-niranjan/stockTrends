@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.balanceSheet;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HistoricalStatsData{
+public class BalanceHistoricalStatsData {
 
 	@JsonProperty("Reserves")
 	private Reserves reserves;

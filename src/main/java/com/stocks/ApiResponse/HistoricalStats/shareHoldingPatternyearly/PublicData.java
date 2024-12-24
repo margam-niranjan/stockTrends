@@ -2,7 +2,7 @@ package com.stocks.ApiResponse.HistoricalStats.shareHoldingPatternyearly;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Public{
+public class PublicData{
 
 	@JsonProperty("Mar 2019")
 	private Object mar2019;

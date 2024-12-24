@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class StockService {
     private String stock;
-    public void setStock(String industry){
+    public void setStock(String stock){
         this.stock = stock;
     }
     @Value("${stock.api.key}")
