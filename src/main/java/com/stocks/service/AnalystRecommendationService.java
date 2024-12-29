@@ -36,7 +36,6 @@ public class AnalystRecommendationService {
                 httpEntity,
                 AnalystRecommendationData.class
         );
-
         return response.getBody();
     }
 }
