@@ -36,16 +36,6 @@ public class AnalystRecommendationService {
                 httpEntity,
                 AnalystRecommendationData.class
         );
-        System.out.println(response.getBody());
-        ResponseEntity<String> rawresponse = restTemplate.exchange(
-                url,
-                HttpMethod.GET,
-                httpEntity,
-                String.class
-        );
-        System.out.println(rawresponse);
-
-
         return response.getBody();
     }
 }
