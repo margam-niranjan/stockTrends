@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class AnalystRecommendationService {
     private String stock;
-    public void setStock(String industry){
+    public void setStock(String stock){
         this.stock = stock;
     }
     @Value("${stock.api.key}")
@@ -22,13 +22,13 @@ public class AnalystRecommendationService {
     private String apiHost;
     @Autowired
     private RestTemplate restTemplate;
-    private String url = "https://indian-stock-exchange-api2.p.rapidapi.com/stock_target_price?stock_id=";
-    StringBuilder stringBuilder = new StringBuilder(url);
+    private String basrurl = "https://indian-stock-exchange-api2.p.rapidapi.com/stock_target_price?stock_id=";
+    String url = new String();
     HeaderHttp header = new HeaderHttp();
 
 
     public AnalystRecommendationData getAnalystRecommendations() {
-        String url = stringBuilder.append(stock).toString();
+        String url = basrurl + stock;
         HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey, apiHost));
         ResponseEntity<AnalystRecommendationData> response = restTemplate.exchange(
                 url,

@@ -30,6 +30,8 @@ public class StockService {
         HttpEntity<Void> httpEntity = new HttpEntity<>(header.getHttpHeader(apiKey, apiHost));
         String url = stringBuilder.append(stock).toString();
         ResponseEntity<StockInfoByName> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, StockInfoByName.class);
+        ResponseEntity<String> rawresponse = restTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class);
+        System.out.println(rawresponse);
         return response.getBody();
     }
 

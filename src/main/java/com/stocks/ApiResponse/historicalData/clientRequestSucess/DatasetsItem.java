@@ -13,7 +13,7 @@ public class DatasetsItem {
 	private Meta meta;
 
 	@JsonProperty("values")
-	private List<List<Object>> values; 
+	private List<List<Object>> values;
 
 	@JsonProperty("label")
 	private String label;
