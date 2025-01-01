@@ -14,7 +14,7 @@ import java.util.List;
 public class CommodityController {
     @Autowired
     private CommodityService commodityService;
-    @GetMapping("/")
+    @GetMapping
     public List<CommodityData> getCommodity() throws Exception{
         return commodityService.getCommodity();
     }

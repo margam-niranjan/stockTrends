@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/analyst-recommendations")
 public class AnalystRecommendationController {
     @Autowired
-    private AnalystRecommendationService analystRecommendationService;
+    AnalystRecommendationService analystRecommendationService;
 
     @GetMapping("/{stock}")
     public AnalystRecommendationData getStockData(@PathVariable String stock) throws Exception {

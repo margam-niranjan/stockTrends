@@ -14,7 +14,7 @@ import java.util.List;
 public class PriceShockersController {
     @Autowired
     private PriceShockersService priceShockersService;
-    @GetMapping("/")
+    @GetMapping
     public PriceShockersData getpriceShockers(){
         return priceShockersService.getPriceShockers();
     }

@@ -14,7 +14,7 @@ import java.util.List;
 public class BseMostActiveController {
     @Autowired
     BseMostActiveService bseMostActiveService;
-    @GetMapping("/")
+    @GetMapping
     public List<BseMostActiveData> getBseActive()throws Exception{
         return bseMostActiveService.getBseActive();
     }
