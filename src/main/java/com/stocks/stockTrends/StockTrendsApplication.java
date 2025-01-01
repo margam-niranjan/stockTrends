@@ -29,5 +29,4 @@ public class StockTrendsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StockTrendsApplication.class, args);
 	}
-
 }
