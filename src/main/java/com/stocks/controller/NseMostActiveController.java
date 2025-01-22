@@ -16,6 +16,6 @@ public class NseMostActiveController {
     NseMostActiveService nseMostActiveService;
     @GetMapping
     public List<NseMostActiveData> getNseActive()throws Exception{
-   return nseMostActiveService.getNseActive();
+        return nseMostActiveService.getNseActive();
     }
 }

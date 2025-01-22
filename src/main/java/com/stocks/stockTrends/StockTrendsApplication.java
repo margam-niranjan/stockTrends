@@ -23,13 +23,15 @@ import java.net.http.HttpResponse;
 @EntityScan(basePackages = "com.stocks.userAccount.accountData")
 public class StockTrendsApplication {
 	@Bean
-	public RestTemplate restTemplate(){
+	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
 	@Bean
 	public HeaderHttp headerHttp() {
 		return new HeaderHttp();
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(StockTrendsApplication.class, args);
 	}
