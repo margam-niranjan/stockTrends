@@ -1,7 +1,4 @@
 package com.stocks.ApiResponse.Industry;
-import org.springframework.data.convert.Jsr310Converters;
-
-import java.time.LocalDateTime;
 import java.util.Map;
 public class IndustryData {
     private String id;

@@ -1,7 +1,6 @@
 package com.stocks.controller;
 
 import com.stocks.ApiResponse.GenericApiResponse;
-import com.stocks.ApiResponse.analystRecommendation.AnalystRecommendationData;
 import com.stocks.service.AnalystRecommendationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
