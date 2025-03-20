@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mutual-funds-search")
+@RequestMapping("/mutual-funds")
 public class MutualFundSearchController {
     @Autowired
     MutualFundSearchService mutualFundSearchService;

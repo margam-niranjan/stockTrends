@@ -34,5 +34,4 @@ public class StockService {
         System.out.println(rawresponse);
         return response.getBody();
     }
-
 }
